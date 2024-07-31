@@ -1,6 +1,7 @@
 plugins {
     id("java")
     application
+    checkstyle
 }
 
 application {
@@ -17,6 +18,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    checkstyle("com.puppycrawl.tools:checkstyle:10.3")
 }
 
 tasks.test {
@@ -25,4 +27,9 @@ tasks.test {
 
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
+}
+
+checkstyle {
+    toolVersion = "10.3" //
+    configFile = file("config/checkstyle/checkstyle.xml")
 }
