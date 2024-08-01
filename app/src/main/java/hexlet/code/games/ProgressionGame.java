@@ -9,14 +9,15 @@ public class ProgressionGame {
     private static final int MAX_LENGTH = 10;
     private static final int MAX_START_NUMBER = 50;
     private static final int MAX_STEPS = 5;
+    private static final int NUMBER_OF_ROUNDS = 3;
 
     public static void progressionPlay() {
         String description = "What number is missing in the progression?";
-        String[][] questionsAndAnswers = new String[3][2];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_ROUNDS][2];
         Random random = new Random();
 
-        for (var i = 0; i < 3; i++) {
-            int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MAX_LENGTH;
+        for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
             int start = random.nextInt(MAX_START_NUMBER);
             int step = random.nextInt(MAX_STEPS) + 1;
             int missingIndex = random.nextInt(length);

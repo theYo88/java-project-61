@@ -6,13 +6,14 @@ import java.util.Random;
 
 public class PrimeGame {
     private static final int MAX_NUMBER = 100;
+    private static final int NUMBER_OF_ROUNDS = 3;
 
     public static void primaPlay() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] questionsAndAnswers = new String[3][2];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_ROUNDS][2];
         Random random = new Random();
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number = random.nextInt(MAX_NUMBER) + 1;
             String correctAnswer = isPrime(number) ? "yes" : "no";
 
