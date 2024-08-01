@@ -22,7 +22,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(GREET_GAME_NUMBER + " - Greet");
         System.out.println(EVEN_GAME_NUMBER + " - Even");
-        System.out.println(CALC_GAME_NUMBER +" - Calc");
+        System.out.println(CALC_GAME_NUMBER + " - Calc");
         System.out.println(GCD_GAME_NUMBER + " - GCD");
         System.out.println(PROGRESSION_GAME_NUMBER + " - Progression");
         System.out.println(PRIME_GAME_NUMBER + " - Prime");
