@@ -14,12 +14,16 @@ public class EvenGame {
 
         for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number = random.nextInt(MAX_NUMBER);
-            String correctAnswer = (number % 2 == 0) ? "yes" : "no";
+            String correctAnswer = isEven(number) ? "yes" : "no";
 
             questionAndAnswers[i][0] = String.valueOf(number);
             questionAndAnswers[i][1] = correctAnswer;
         }
 
         Engine.runGame(questionAndAnswers, description);
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }

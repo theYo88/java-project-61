@@ -21,7 +21,7 @@ public class CalcGame {
             char operation = OPERATORS[random.nextInt(OPERATORS.length)];
 
             String question = num1 + " " + operation + " " + num2;
-            String correctAnswer = calculate(num1, num2, operation);
+            String correctAnswer = String.valueOf(calculate(num1, num2, operation));
 
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = correctAnswer;
@@ -30,7 +30,12 @@ public class CalcGame {
         Engine.runGame(questionsAndAnswers, description);
     }
 
-    private static String calculate(int num1, int num2, char operation) {
-        return String.valueOf(operation == '+' ? (num1 + num2) : operation == '-' ? (num1 - num2) : (num1 * num2));
+    private static int calculate(int num1, int num2, char operation) {
+        return switch (operation) {
+            case '+' -> num1 + num2;
+            case '-' -> num1 - num2;
+            case '*' -> num1 * num2;
+            default -> 0;
+        };
     }
 }
