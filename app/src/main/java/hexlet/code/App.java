@@ -26,10 +26,7 @@ public class App {
         scanner.nextLine();
 
         switch (choise) {
-            case 0 -> {
-                System.out.println("Exiting the game.");
-            }
-
+            case 0 -> System.out.println("Exiting the game.");
             case 1 -> Cli.greetUser();
             case 2 -> EvenGame.evenPlay();
             case 3 -> CalcGame.calcPlay();
