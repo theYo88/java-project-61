@@ -22,17 +22,16 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choise: ");
 
-        int choise = scanner.nextInt();
-        scanner.nextLine();
+        String choise = scanner.nextLine();
 
         switch (choise) {
-            case 0 -> System.out.println("Exiting the game.");
-            case 1 -> Cli.greetUser();
-            case 2 -> EvenGame.evenPlay();
-            case 3 -> CalcGame.calcPlay();
-            case 4 -> GCD.gcdPlay();
-            case 5 -> ProgressionGame.progressionPlay();
-            case 6 -> PrimeGame.primaPlay();
+            case "0" -> System.out.println("Exiting the game.");
+            case "1" -> Cli.greetUser();
+            case "2" -> EvenGame.evenPlay();
+            case "3" -> CalcGame.calcPlay();
+            case "4" -> GCD.gcdPlay();
+            case "5" -> ProgressionGame.progressionPlay();
+            case "6" -> PrimeGame.primaPlay();
             default -> System.out.println("Invalid choice. Please select a valid game number.");
         }
         scanner.close();
