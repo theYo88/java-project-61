@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class CalcGame {
     private static final int MAX_NUMBER = 100;
@@ -13,12 +12,10 @@ public class CalcGame {
         String description = "What is the result of the expression?";
         String[][] questionsAndAnswers = new String[NUMBER_OF_ROUNDS][2];
 
-        Random random = new Random();
-
         for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int num1 = random.nextInt(MAX_NUMBER);
-            int num2 = random.nextInt(MAX_NUMBER);
-            char operation = OPERATORS[random.nextInt(OPERATORS.length)];
+            int num1 = Utils.generateRandomNumber(MAX_NUMBER);
+            int num2 = Utils.generateRandomNumber(MAX_NUMBER);
+            char operation = Utils.generateRandomOperator(OPERATORS);
 
             String question = num1 + " " + operation + " " + num2;
             String correctAnswer = String.valueOf(calculate(num1, num2, operation));
